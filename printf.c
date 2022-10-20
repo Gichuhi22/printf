@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
+
 		if (format[i] == '%')
 		{
 			i++;
@@ -40,6 +41,9 @@ int _printf(const char *format, ...)
 				case 'i':
 					j += printf_int(va_arg(args, int));
 					break;
+				default:
+					j += _putchar('%');
+					j += _putchar(format[i]);
 			}
 		}
 		else
@@ -49,6 +53,10 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
+	}
+	else
+	{
+		return (-1);
 	}
 	return (j);
 }
