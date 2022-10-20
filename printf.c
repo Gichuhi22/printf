@@ -23,7 +23,6 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			switch_case(format[i]);
 			switch (format[i])
 			{
 				case 'c':
