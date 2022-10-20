@@ -1,19 +1,22 @@
 #include"main.h"
 /**
- *printf_string - handles strings output on standard output
- *@s: a pointer to passed string argument
+ *str - handles strings output on standard output
+ *@string: passed string list
  *Return: length of the string
  */
-int printf_string(char *s)
+int str(va_list string)
 {
-	int i;
+	int length;
+	char *s;
+
+	s = va_arg(string, char *);
 
 	if (s == NULL)
 		s = "(nil)";
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (length = 0; s[length] != '\0'; length++)
 	{
-		_putchar(s[i]);
+		_putchar(s[length]);
 	}
 	return (strlen(s));
 }

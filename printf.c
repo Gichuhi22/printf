@@ -1,5 +1,50 @@
 #include"main.h"
-void switch_case(char *);
+/**
+ *print_op - checks the specifier to print
+ *@format: passed format string
+ *@print_arr: array of structures
+ *@args: list of arguments to print
+ *Return: int number of char to print
+ */
+
+int print_op(const char *format, fmt_t *print_arr, va_list args)
+{
+	char a;
+	int i = 0, j = 0, k = 0;
+
+	a = format[i];
+
+	while (a != '\0')
+	{
+		if (a == '%')
+		{
+			k = 0;
+			j++;
+			a = format[j];
+
+			while (print_arr[k].type != NULL && a != *(print_arr[k].type))
+				k++;
+			if (print_arr[k].type != NULL)
+				i += print_arr[k].f(args);
+			else
+			{
+				if (a == '\0')
+					return (-1);
+				if (a != '%')
+					i += _putchar('%');
+				i += _putchar(a);
+			}
+		}
+		else
+			i += _putchar(a);
+		j++;
+		a = format[j];
+	}
+	return (i);
+}
+
+
+
 /**
  *_printf - mimics the standard printf function
  *@format: format string pointer
@@ -11,107 +56,22 @@ void switch_case(char *);
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, j = 0;
-	
-	if (format)
-	{
-	va_start(args, format);
+	int j = 0;
 
-	for (i = 0; format[i] != '\0'; i++)
-	{
+	fmt_t specifier[] = {
+		{"c", ch},
+		{"s", str},
+		{"d", _int},
+		{"i", _int},
+		{NULL, NULL}
+	};
 
-		if (format[i] == '%')
-		{
-			i++;
-			switch (format[i])
-			{
-				case 'c':
-					_putchar((char)(va_arg(args, int)));
-					j++;
-					break;
-				case 's':
-					j += printf_string(va_arg(args, char*));
-					break;
-				case '%':
-					_putchar('%');
-					j++;
-					break;
-				case 'd':
-					j += printf_int(va_arg(args, int));
-					break;
-				case 'i':
-					j += printf_int(va_arg(args, int));
-					break;
-				default:
-					j += _putchar('%');
-					j += _putchar(format[i]);
-			}
-		}
-		else
-		{
-			_putchar(format[i]);
-			j++;
-		}
-	}
-	va_end(args);
-	}
-	else
-	{
+	if (format == NULL)
 		return (-1);
-	}
+
+	va_start(args, format);
+	j = print_op(format, specifier, args);
+	va_end(args);
 	return (j);
 }
-/**
- * switch_case - switch case statement
- *
-void switch_case(format[i])
-{
-	switch (format[i])
-	{
-		case 'c':
-			_putchar((char)(va_arg(args, int)));
-			j++;
-			break;
-		case 's':
-			j += printf_string(va_arg(args, char*));
-			break;
-		case '%':
-			_putchar('%');
-			j++;
-			break;
-		case 'd':
-			j += printf_int(va_arg(args, int));
-			break;
-		case 'i':
-			j += printf_int(va_arg(args, int));
-			break;
-		default:
-			j += _putchar('%');
-			j += _putchar(format[i]);
-	}
-	}
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
