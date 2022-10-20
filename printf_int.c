@@ -1,33 +1,26 @@
 #include"main.h"
 /**
- * _int - handles formatting of integers
- * @intgr: list printed
+ * printf_int - handles formatting of integers
+ * @x: passed integer argument
  *
  * Return: returns an int value length of the string
  */
 
-int _int(va_list intgr)
+int printf_int(int x)
 {
-	int i, expo = 1, length = 0;
-	unsigned int n;
+	int i;
+	char *s;
+	char *string;
 
-	i = va_arg(intgr, int);
+	string = malloc(sizeof(char) * (digits_count(x) + 1));
+	if (string == NULL)
+		exit(1);
 
-	if (i < 0)
+	s = my_itoa(x, string, 10);
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		length += _putchar('-');
-		n = i * -1;
+		_putchar(s[i]);
 	}
-	else
-		n = i;
-	while (n / expo > 9)
-		expo *= 10;
-
-	while (expo != 0)
-	{
-		length += _putchar(n / expo + '0');
-		n = n % expo;
-		expo = expo / 10;
-	}
-	return (length);
+	free(string);
+	return (strlen(s));
 }
