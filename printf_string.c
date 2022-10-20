@@ -8,6 +8,9 @@ int printf_string(char *s)
 {
 	int i;
 
+	if (s == NULL)
+		s = "(nil)";
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		_putchar(s[i]);
