@@ -13,10 +13,14 @@ int printf_int(int x)
 	char *string;
 
 	string = malloc(sizeof(char) * (digits_count(x) + 1));
+	if (string == NULL)
+		exit (1);
+
 	s = my_itoa(x, string, 10);
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		_putchar(s[i]);
 	}
+	free (string);
 	return (strlen(s));
 }
