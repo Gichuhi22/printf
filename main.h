@@ -9,5 +9,5 @@ int _printf(const char *format, ...);
 int printf_string(char *);
 int printf_int(int);
 char *my_itoa(int, char*, int);
-
+int digits_count(int);
 #endif /*main.h*/
