@@ -4,6 +4,7 @@
 #include<stdarg.h>
 #include<stdlib.h>
 #include<string.h>
+#include<stdbool.h>
 int _putchar(char );
 int _printf(const char *format, ...);
 int printf_string(char *);

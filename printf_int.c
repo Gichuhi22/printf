@@ -16,7 +16,7 @@ int printf_int(int x)
 	if (string == NULL)
 	{
 		free(string);
-		return (0);
+		return (1);
 	}
 
 	s = my_itoa(x, string, 10);
