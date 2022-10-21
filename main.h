@@ -10,4 +10,5 @@ int printf_string(char *);
 int printf_int(int);
 char *my_itoa(int, char*, int);
 int digits_count(int);
+int printf_bin(unsigned int);
 #endif /*main.h*/

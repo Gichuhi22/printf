@@ -42,6 +42,9 @@ int _printf(const char *format, ...)
 				case 'i':
 					j += printf_int(va_arg(args, int));
 					break;
+				case 'b':
+					j += printf_bin(va_arg(args, unsigned int));
+					break;
 				default:
 					j += _putchar('%');
 					j += _putchar(format[i]);

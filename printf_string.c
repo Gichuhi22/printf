@@ -9,7 +9,10 @@ int printf_string(char *s)
 	int i;
 
 	if (s == NULL)
+	{
 		s = "(nil)";
+		return (0);
+	}
 
 	for (i = 0; s[i] != '\0'; i++)
 	{

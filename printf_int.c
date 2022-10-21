@@ -14,7 +14,10 @@ int printf_int(int x)
 
 	string = malloc(sizeof(char) * (digits_count(x) + 1));
 	if (string == NULL)
-		exit(1);
+	{
+		free(string);
+		return (0);
+	}
 
 	s = my_itoa(x, string, 10);
 	for (i = 0; s[i] != '\0'; i++)
