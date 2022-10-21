@@ -1,10 +1,8 @@
 #include"main.h"
 /**
- *
- *
- *
- *
- *
+ *printf_bin - handles binary output
+ *@a: unsigned integer argument
+ *Return: character count
  */
 int printf_bin(unsigned int a)
 {
@@ -12,7 +10,7 @@ int printf_bin(unsigned int a)
 	char s[33];
 	unsigned int t = a;
 
-	while(t / 2 != 0)
+	while (t / 2 != 0)
 	{
 		t = t / 2;
 		count++;
@@ -24,7 +22,7 @@ int printf_bin(unsigned int a)
 		s[i] = a % 2;
 		a = a / 2;
 	}
-	for (i = count -1; i >= 0; i--)
+	for (i = count - 1; i >= 0; i--)
 	{
 		_putchar(s[i] + '0');
 	}
