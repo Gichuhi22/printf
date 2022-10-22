@@ -16,10 +16,12 @@ int printf_int(int x)
 	if (string == NULL)
 	{
 		free(string);
-		return (1);
+		return (-1);
 	}
 
 	s = my_itoa(x, string, 10);
+	s[digits_count(x) + 1] = '\0';
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		_putchar(s[i]);

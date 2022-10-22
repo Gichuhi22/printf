@@ -1,47 +1,4 @@
 #include"main.h"
-/**
- *reverse_string - reverses a string
- *@s: passed string
- *@length: length of the string
- */
-
-void reverse_string(char *s, int length)
-{
-	int start, end;
-	char temp;
-
-	for (start = 0, end = length - 1; start < end; start++, end--)
-	{
-		temp = s[start];
-		s[start] = s[end];
-		s[end] = temp;
-	}
-
-}
-
-
-/**
- * digits_count - counts the number of digits in an integer
- * @a: integer value argument
- * Return: integer count value
- */
-
-int digits_count(int a)
-{
-	int count = 0;
-
-	if (a < 0)
-	{
-		a = -1 * a;
-		count += 1;
-	}
-	while (a > 0)
-	{
-		a = a / 10;
-		count++;
-	}
-	return (count);
-}
 
 /**
  * my_itoa - converts integers to strings

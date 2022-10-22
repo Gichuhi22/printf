@@ -45,6 +45,18 @@ int _printf(const char *format, ...)
 				case 'b':
 					j += printf_bin(va_arg(args, unsigned int));
 					break;
+				case 'u':
+					j += printf_uint(va_arg(args, unsigned int));
+					break;
+				case 'o':
+					j += printf_octal(va_arg(args, unsigned int));
+					break;
+				case 'x':
+					j += printf_hexalower(va_arg(args, unsigned int));
+					break;
+				case 'X':
+					j += printf_hexaupper(va_arg(args, unsigned int));
+					break;
 				default:
 					j += _putchar('%');
 					j += _putchar(format[i]);

@@ -12,4 +12,9 @@ int printf_int(int);
 char *my_itoa(int, char*, int);
 int digits_count(int);
 int printf_bin(unsigned int);
+int printf_uint(unsigned int);
+void reverse_string(char *, int);
+int printf_octal(unsigned int);
+int printf_hexalower(unsigned int);
+int printf_hexaupper(unsigned int);
 #endif /*main.h*/

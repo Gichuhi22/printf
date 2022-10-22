@@ -1,0 +1,49 @@
+#include"main.h"
+/**
+ * printf_hexalower - printf hexadecimals in lower case
+ * @x: unsigned integer to convert
+ * Return: length of the hexadecimal
+ */
+
+int printf_hexalower(unsigned int x)
+{
+	int i, j, k = 0, length;
+	char *str;
+
+	j = digits_count(x);
+	str = malloc(sizeof(char) * j);
+	if (str == NULL)
+	{
+		free(str);
+		return (-1);
+	}
+	if (x)
+	{
+		while (x != 0)
+		{
+			i = x % 16;
+			if (i < 10)
+			{
+				str[k] = i + 48;
+				k++;
+			}
+			else
+			{
+				str[k] = i + 55;
+				k++;
+			}
+			x = x / 16;
+		}
+	str[k + 1] = '\0';
+	length = strlen(str);
+	reverse_string(str, length);
+
+	for (k = 0; str[k] != '\0'; k++)
+		if (str[k] >= 65 && str[k] <= 90)
+			_putchar(str[k] + 32);
+		else
+		_putchar(str[k]);
+	}
+	free(str);
+	return (length);
+}
