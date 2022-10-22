@@ -8,24 +8,42 @@
 
 int printf_int(int x)
 {
-	int i;
-	char *s;
-	char *string;
+	int i, k = 0, length;
+	char *str;
+	bool isNegative = false;
 
-	string = malloc(sizeof(char) * (digits_count(x) + 1));
-	if (string == NULL)
+	str = malloc(sizeof(char) * (digits_count(x) + 1));
+	if (str == NULL)
 	{
-		free(string);
+		free(str);
 		return (-1);
 	}
-
-	s = my_itoa(x, string, 10);
-	s[digits_count(x) + 1] = '\0';
-
-	for (i = 0; s[i] != '\0'; i++)
+	if (x)
 	{
-		_putchar(s[i]);
+		if (x < 0)
+		{
+			isNegative = true;
+			x = -1 * x;
+		}
+		while (x > 0)
+		{
+			i = x % 10;
+			str[k] = i + '0';
+			k++;
+			x = x / 10;
+		}
+		if (isNegative)
+			str[k++] = '-';
+
+		str[k + 1] = '\0';
+		length = strlen(str);
+		reverse_string(str, length);
+
+		for (k = 0; str[k] != '\0'; k++)
+		{
+			_putchar(str[k]);
+		}
 	}
-	free(string);
-	return (strlen(s));
+	free(str);
+	return (length);
 }
