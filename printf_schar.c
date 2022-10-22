@@ -1,9 +1,14 @@
 #include"main.h"
-
+/**
+ * printf_schar - print special characters
+ * @s: format string
+ * Return: length of string
+ */
 
 int printf_schar(char *s)
 {
 	int i;
+
 	if (s == NULL)
 		return (-1);
 
