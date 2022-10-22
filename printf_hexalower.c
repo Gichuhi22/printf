@@ -37,7 +37,6 @@ int printf_hexalower(unsigned int x)
 	str[k + 1] = '\0';
 	length = strlen(str);
 	reverse_string(str, length);
-
 	for (k = 0; str[k] != '\0'; k++)
 		if (str[k] >= 65 && str[k] <= 90)
 			_putchar(str[k] + 32);
@@ -45,9 +44,7 @@ int printf_hexalower(unsigned int x)
 		_putchar(str[k]);
 	}
 	else
-	{
 		return (-1);
-	}
 	free(str);
 	return (length);
 }

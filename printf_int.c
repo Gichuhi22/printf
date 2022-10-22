@@ -40,14 +40,10 @@ int printf_int(int x)
 		reverse_string(str, length);
 
 		for (k = 0; str[k] != '\0'; k++)
-		{
 			_putchar(str[k]);
-		}
 	}
 	else
-	{
 		return (-1);
-	}
 	free(str);
 	return (length);
 }

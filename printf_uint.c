@@ -38,7 +38,7 @@ int printf_uint(unsigned int x)
 	}
 	else
 	{
-		return(-1);
+		return (-1);
 	}
 	free(str);
 	return (strlen(str));
