@@ -57,6 +57,9 @@ int _printf(const char *format, ...)
 				case 'X':
 					j += printf_hexaupper(va_arg(args, unsigned int));
 					break;
+				case 'S':
+					j += printf_schar(va_arg(args, char*));
+					break;
 				default:
 					j += _putchar('%');
 					j += _putchar(format[i]);

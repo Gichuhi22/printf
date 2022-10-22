@@ -17,4 +17,5 @@ void reverse_string(char *, int);
 int printf_octal(unsigned int);
 int printf_hexalower(unsigned int);
 int printf_hexaupper(unsigned int);
+int printf_schar(char *);
 #endif /*main.h*/
