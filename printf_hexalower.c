@@ -44,6 +44,10 @@ int printf_hexalower(unsigned int x)
 		else
 		_putchar(str[k]);
 	}
+	else
+	{
+		return (-1);
+	}
 	free(str);
 	return (length);
 }

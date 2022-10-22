@@ -43,6 +43,10 @@ int printf_hexaupper(unsigned int x)
 	{
 		_putchar(str[k]);
 	}
+	else
+	{
+		return (-);
+	}
 	free(str);
 	return (length);
 }

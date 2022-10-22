@@ -44,6 +44,10 @@ int printf_int(int x)
 			_putchar(str[k]);
 		}
 	}
+	else
+	{
+		return (-1);
+	}
 	free(str);
 	return (length);
 }

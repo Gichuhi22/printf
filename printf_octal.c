@@ -34,6 +34,10 @@ int printf_octal(unsigned int x)
 		for (k = 0; str[k] != '\0'; k++)
 			_putchar(str[k]);
 	}
+	else
+	{
+		return (-1);
+	}
 	free(str);
 	return (length);
 }

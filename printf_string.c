@@ -11,7 +11,7 @@ int printf_string(char *s)
 	if (s == NULL)
 	{
 		s = "(nil)";
-		return (0);
+		return (-1);
 	}
 
 	for (i = 0; s[i] != '\0'; i++)
