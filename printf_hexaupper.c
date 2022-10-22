@@ -37,15 +37,15 @@ int printf_hexaupper(unsigned int x)
 	str[k + 1] = '\0';
 	length = strlen(str);
 	reverse_string(str, length);
-	}
 
 	for (k = 0; str[k] != '\0'; k++)
 	{
 		_putchar(str[k]);
 	}
+	}
 	else
 	{
-		return (-);
+		return (-1);
 	}
 	free(str);
 	return (length);
