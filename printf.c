@@ -11,7 +11,7 @@ void switch_case(char *);
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, j = 0;
+	int i, j = 0, flag = 0;
 
 	if (format)
 	{
@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-
+		if (!flag)
 		if (format[i] == '%')
 		{
 			i++;
@@ -75,12 +75,15 @@ int _printf(const char *format, ...)
 					j += _putchar('%');
 					j += _putchar(format[i]);
 			}
+			flag = 0;
 		}
 		else
 		{
 			_putchar(format[i]);
 			j++;
 		}
+		else
+			flag = 1;
 	}
 	va_end(args);
 	}
