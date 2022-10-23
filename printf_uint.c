@@ -1,6 +1,6 @@
 #include"main.h"
 /**
- * printf_uint - handles printing uinsigned integers on stdout
+ * printf_uint - handles printing unsigned integers on stdout
  * @x: unsigned integer argument
  * Return: returns number of characters of the string
  */
@@ -8,37 +8,25 @@
 
 int printf_uint(unsigned int x)
 {
-	int i = 0, j, k = 0;
-	char *str;
+	unsigned int a[10];
+	unsigned int i, m, sum;
+	int count;
 
-	j = digits_count(x);
-
-	str = malloc(sizeof(char) * j);
-	if (str == NULL)
+	m = 1000000000; /* (10 ^ 9) */
+	a[0] = x / m;
+	for (i = 1; i < 10; i++)
 	{
-		free(str);
-		return (-1);
+		m /= 10;
+		a[i] = (x / m) % 10;
 	}
-
-	if (x)
+	for (i = 0, sum = 0, count = 0; i < 10; i++)
 	{
-		while (x > 0)
+		sum += a[i];
+		if (sum || i == 9)
 		{
-			i = x % 10;
-			str[k] = i + '0';
-			k++;
-			x = x / 10;
+			_putchar('0' + a[i]);
+			count++;
 		}
-		str[k + 1] = '\0';
-		reverse_string(str, strlen(str));
-
-		for (k = 0; str[k] != '\0'; k++)
-			_putchar(str[k]);
 	}
-	else
-	{
-		return (-1);
-	}
-	free(str);
-	return (strlen(str));
+	return (count);
 }

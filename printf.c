@@ -61,7 +61,7 @@ int _printf(const char *format, ...)
 					j += printf_schar(va_arg(args, char*));
 					break;
 				case 'p':
-					j += printf_p(va_arg(args, unsigned long int));
+					j += printf_hexalower(va_arg(args, unsigned long int));
 					break;
 				case 'r':
 					j += printf_reverse(va_arg(args, char*));
