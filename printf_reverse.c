@@ -7,20 +7,22 @@
 
 int printf_reverse(char *s)
 {
-	int length, i, j;
-	char temp;
+	int i = 0, j;
+	/*char temp;*/
 
 	if (!s)
-		return (-1);
-
-	length = strlen(s);
-	for (i = 0, j = length; i < j; i++, j--)
 	{
-		temp = s[i];
-		s[i] = s[j];
-		s[j] = temp;
-		putchar(s[i]);
+		s = "(null)";
+		return (-1);
 	}
 
-	return (length);
+	while (s[i])
+		i++;
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		putchar(s[j]);
+	}
+
+	return (i);
 }

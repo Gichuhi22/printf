@@ -18,5 +18,5 @@ int printf_string(char *s)
 	{
 		_putchar(s[i]);
 	}
-	return (strlen(s));
+	return (i);
 }

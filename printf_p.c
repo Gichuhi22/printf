@@ -12,6 +12,7 @@ int printf_p(unsigned long int n)
 {
 	int i;
 	char s[100];
+
 	register int count = 0;
 
 	if (!n)
