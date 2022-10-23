@@ -20,4 +20,5 @@ int printf_hexaupper(unsigned int);
 int printf_schar(char *);
 int printf_p(unsigned long int);
 int printf_reverse(char *);
+int printf_rot13(char *);
 #endif /*main.h*/

@@ -66,6 +66,9 @@ int _printf(const char *format, ...)
 				case 'r':
 					j += printf_reverse(va_arg(args, char*));
 					break;
+				case 'R':
+					j += printf_rot13(va_arg(args, char*));
+					break;
 				case '\0':
 					return (-1);
 				default:
