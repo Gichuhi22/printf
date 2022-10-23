@@ -18,4 +18,6 @@ int printf_octal(unsigned int);
 int printf_hexalower(unsigned int);
 int printf_hexaupper(unsigned int);
 int printf_schar(char *);
+int printf_p(unsigned long int);
+int printf_reverse(char *);
 #endif /*main.h*/
