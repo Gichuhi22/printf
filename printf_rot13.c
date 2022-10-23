@@ -1,8 +1,8 @@
 #include"main.h"
 /**
  * printf_rot13 - encodes text rot13 format
- * @c: string pointer
- * 
+ * @s: string pointer
+ *
  * Return: string length;
  */
 
@@ -34,7 +34,7 @@ int printf_rot13(char *s)
 			}
 		}
 	}
-	else 
+	else
 		return (-1);
 
 	return (count);
