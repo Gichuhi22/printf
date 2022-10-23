@@ -13,7 +13,7 @@ int printf_schar(char *s)
 
 	if (s == NULL)
 		return (-1);
-	
+
 	str = malloc(sizeof(char) * (strlen(s) + 2));
 	for (i = 0; s[i] != '\0'; i++)
 		str[i] = s[i];
