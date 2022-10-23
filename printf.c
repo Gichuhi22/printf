@@ -66,6 +66,8 @@ int _printf(const char *format, ...)
 				case 'r':
 					j += printf_reverse(va_arg(args, char*));
 					break;
+				case '\0':
+					return (-1);
 				default:
 					j += _putchar('%');
 					j += _putchar(format[i]);
