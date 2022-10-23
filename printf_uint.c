@@ -12,7 +12,7 @@ int printf_uint(unsigned int x)
 	char *str;
 
 	j = digits_count(x);
-	/*printf("digits count= %d\n", j);*/
+
 	str = malloc(sizeof(char) * j);
 	if (str == NULL)
 	{
@@ -27,7 +27,6 @@ int printf_uint(unsigned int x)
 			i = x % 10;
 			str[k] = i + '0';
 			k++;
-			/*_putchar(i + '0');*/
 			x = x / 10;
 		}
 		str[k + 1] = '\0';

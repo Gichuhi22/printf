@@ -60,6 +60,9 @@ int _printf(const char *format, ...)
 				case 'S':
 					j += printf_schar(va_arg(args, char*));
 					break;
+				case 'p':
+					j += printf_hexalower(va_arg(args, unsigned long int));
+					break;
 				default:
 					j += _putchar('%');
 					j += _putchar(format[i]);
